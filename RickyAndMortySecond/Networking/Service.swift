@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Alamofire
 enum RickanMortyServiceEndPoints: String {
     case BASE_URL = "https://rickandmortyapi.com/api/"
     case PATH = "character/"
@@ -46,7 +47,10 @@ class RickanMortyService: RickanMortyServiceProtocol {
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 let characters = try decoder.decode(RickanMortyModel.self, from: data)
-                completion(.success(characters.results))
+                if let character = characters.results {
+                    completion(.success(character))
+                }
+               
             }catch{
                 completion(.failure(.invalidData))
             }
@@ -75,7 +79,9 @@ class RickanMortyService: RickanMortyServiceProtocol {
                 let decoder = JSONDecoder()
                 decoder.keyDecodingStrategy = .convertFromSnakeCase
                 let characters = try decoder.decode(RickanMortyModel.self, from: data)
-                completion(.success(characters.results))
+                if let character = characters.results {
+                    completion(.success(character))
+                }
             }catch{
                 completion(.failure(.invalidData))
             }
@@ -107,7 +113,9 @@ class RickanMortyService: RickanMortyServiceProtocol {
                  do {
                      let postBody = try JSONDecoder().decode(RickanMortyModel.self, from: data)
                      print(postBody)
-                     completion(.success(postBody.results))
+                     if let character = postBody.results {
+                         completion(.success(character))
+                     }
                  }catch {
                      completion(.failure(.unableToComplete))
                  }
@@ -115,6 +123,35 @@ class RickanMortyService: RickanMortyServiceProtocol {
                          }
                    }.resume()
                }
+    
+    func getFilteredData(gender: String,status: String, completion:@escaping(Result<[RickanMortyModelResult],Error>)-> Void) {
+    
+        guard let url = URL(string: "https://rickandmortyapi.com/api/character/?name=rick&page=2&gender=\(gender)&status=\(status)") else {return}
+    var urlRequest = URLRequest(url: url)
+    urlRequest.httpMethod = "GET"
+    let task = URLSession.shared.dataTask(with: urlRequest){ data, response, error in
+    if let response = response as? HTTPURLResponse, !(200...299).contains(response.statusCode){
+        print(response.statusCode)
+    }
+    if let error = error {
+        print(error.localizedDescription)
+        completion(.failure(error))
+    }
+    guard let data = data else {
+        return
+    }
+    do {
+        let result =   try JSONDecoder().decode(RickanMortyModel.self, from: data)
+        if let character = result.results {
+            completion(.success(character))
+        }
+        print(result)
+    } catch let error {
+        print(error.localizedDescription)
+        }
+    }
+    task.resume()
+    }
     
 
     }

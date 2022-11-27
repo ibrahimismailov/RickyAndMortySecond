@@ -18,13 +18,14 @@ protocol RickandmortyViewModelProtocol {
     func callCharacters(searchBar: UISearchBar,textDidChange: String)
     func applyButtonTapped(gender: String, status: String)
     
+    
 }
 
 final class RickandmortyViewModel {
     
   weak  var view: RickanMortyViewInterface?
   lazy var model = [RickanMortyModelResult]()
-  lazy var popUp = FilterPopUp()
+ // lazy var popUp = FilterPopUp()
  
   private lazy var page = 1...42
   private var shouldNeddToCallPulledDownRefreshControll: Bool = false
@@ -32,8 +33,8 @@ final class RickandmortyViewModel {
     func fetchCharacters() {
         guard let page = page.randomElement() else {return}
         view?.beginRefreing()
-        RickanMortyService.shared.fetchCharacters(page: page) { [weak self] model in
-            switch model {
+        RickanMortyService.shared.fetchCharacters(page: page) { [weak self] result in
+            switch result {
             case.success(let model):
                 self?.model = model
                 DispatchQueue.main.async {
@@ -113,7 +114,13 @@ extension RickandmortyViewModel: RickandmortyViewModelProtocol {
     }
     func applyButtonTapped(gender: String, status: String) {
         callCharacterFilter(gender: gender, status: status)
-        popUp.removeFromSuperview()
+        //popUp.removeFromSuperview()
+    }
+    func gotoFilter() {
+        let vc = FilterViewController()
+        let navVC = UINavigationController()
+        navVC.pushViewController(vc, animated: true)
+        
     }
 
  

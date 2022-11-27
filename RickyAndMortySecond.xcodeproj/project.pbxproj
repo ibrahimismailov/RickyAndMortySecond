@@ -22,7 +22,14 @@
 		158C32E529333E04007547AB /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158C32E429333E04007547AB /* UILabel+Extension.swift */; };
 		158C32E829333E42007547AB /* RickandMortyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158C32E729333E42007547AB /* RickandMortyTableViewCell.swift */; };
 		158C32EA29333E5D007547AB /* SortTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158C32E929333E5D007547AB /* SortTableViewCell.swift */; };
-		158C32EC29333FA6007547AB /* PopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158C32EB29333FA6007547AB /* PopUp.swift */; };
+		158C32EE29334389007547AB /* ReusableTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158C32ED29334389007547AB /* ReusableTextfield.swift */; };
+		158C32F0293349F2007547AB /* GenderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158C32EF293349F2007547AB /* GenderTableViewCell.swift */; };
+		158C32F22933589D007547AB /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158C32F12933589D007547AB /* FilterViewController.swift */; };
+		158C32F429335E22007547AB /* ReusableApplyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158C32F329335E22007547AB /* ReusableApplyButton.swift */; };
+		158C32F629335FF4007547AB /* FilterViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158C32F529335FF4007547AB /* FilterViewControllerViewModel.swift */; };
+		158C32F829336111007547AB /* ReusableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158C32F729336111007547AB /* ReusableTableView.swift */; };
+		158C32FA29336A3B007547AB /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158C32F929336A3B007547AB /* FilterCollectionViewCell.swift */; };
+		158C33242933E03B007547AB /* tableviewSetup+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158C33232933E03B007547AB /* tableviewSetup+Extension.swift */; };
 		A373108DB3B729C00716A5E8 /* Pods_RickyAndMortySecond.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B854ACE8D976BEDE12325E01 /* Pods_RickyAndMortySecond.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,7 +51,14 @@
 		158C32E429333E04007547AB /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		158C32E729333E42007547AB /* RickandMortyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickandMortyTableViewCell.swift; sourceTree = "<group>"; };
 		158C32E929333E5D007547AB /* SortTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortTableViewCell.swift; sourceTree = "<group>"; };
-		158C32EB29333FA6007547AB /* PopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUp.swift; sourceTree = "<group>"; };
+		158C32ED29334389007547AB /* ReusableTextfield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableTextfield.swift; sourceTree = "<group>"; };
+		158C32EF293349F2007547AB /* GenderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderTableViewCell.swift; sourceTree = "<group>"; };
+		158C32F12933589D007547AB /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		158C32F329335E22007547AB /* ReusableApplyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableApplyButton.swift; sourceTree = "<group>"; };
+		158C32F529335FF4007547AB /* FilterViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewControllerViewModel.swift; sourceTree = "<group>"; };
+		158C32F729336111007547AB /* ReusableTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableTableView.swift; sourceTree = "<group>"; };
+		158C32F929336A3B007547AB /* FilterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewCell.swift; sourceTree = "<group>"; };
+		158C33232933E03B007547AB /* tableviewSetup+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "tableviewSetup+Extension.swift"; sourceTree = "<group>"; };
 		971A0A47DCBA3D5BF011FC6F /* Pods-RickyAndMortySecond.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickyAndMortySecond.release.xcconfig"; path = "Target Support Files/Pods-RickyAndMortySecond/Pods-RickyAndMortySecond.release.xcconfig"; sourceTree = "<group>"; };
 		B854ACE8D976BEDE12325E01 /* Pods_RickyAndMortySecond.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RickyAndMortySecond.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAD6396DF2EDAE740E42A9B2 /* Pods-RickyAndMortySecond.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickyAndMortySecond.debug.xcconfig"; path = "Target Support Files/Pods-RickyAndMortySecond/Pods-RickyAndMortySecond.debug.xcconfig"; sourceTree = "<group>"; };
@@ -124,11 +138,11 @@
 		158C32CF29333B82007547AB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				158C32F12933589D007547AB /* FilterViewController.swift */,
+				158C32DD29333D82007547AB /* DetailViewController.swift */,
+				158C32BC29333A5C007547AB /* RickandmortyViewController.swift */,
 				158C32E629333E22007547AB /* Cells */,
 				158C32E129333DB2007547AB /* UI+Extensions */,
-				158C32BC29333A5C007547AB /* RickandmortyViewController.swift */,
-				158C32DD29333D82007547AB /* DetailViewController.swift */,
-				158C32EB29333FA6007547AB /* PopUp.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -146,6 +160,7 @@
 			children = (
 				158C32D929333D14007547AB /* RickandmortyViewModel.swift */,
 				158C32DB29333D32007547AB /* DetailViewControllerViewModel.swift */,
+				158C32F529335FF4007547AB /* FilterViewControllerViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -163,6 +178,10 @@
 			children = (
 				158C32E229333DEB007547AB /* rickonImageView+Extension.swift */,
 				158C32E429333E04007547AB /* UILabel+Extension.swift */,
+				158C32ED29334389007547AB /* ReusableTextfield.swift */,
+				158C32F329335E22007547AB /* ReusableApplyButton.swift */,
+				158C32F729336111007547AB /* ReusableTableView.swift */,
+				158C33232933E03B007547AB /* tableviewSetup+Extension.swift */,
 			);
 			path = "UI+Extensions";
 			sourceTree = "<group>";
@@ -172,6 +191,8 @@
 			children = (
 				158C32E729333E42007547AB /* RickandMortyTableViewCell.swift */,
 				158C32E929333E5D007547AB /* SortTableViewCell.swift */,
+				158C32EF293349F2007547AB /* GenderTableViewCell.swift */,
+				158C32F929336A3B007547AB /* FilterCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -310,16 +331,23 @@
 				158C32E529333E04007547AB /* UILabel+Extension.swift in Sources */,
 				158C32DE29333D82007547AB /* DetailViewController.swift in Sources */,
 				158C32D829333CE7007547AB /* RickyMortyModel.swift in Sources */,
+				158C33242933E03B007547AB /* tableviewSetup+Extension.swift in Sources */,
+				158C32F22933589D007547AB /* FilterViewController.swift in Sources */,
 				158C32D429333C9E007547AB /* Errors.swift in Sources */,
+				158C32F429335E22007547AB /* ReusableApplyButton.swift in Sources */,
 				158C32EA29333E5D007547AB /* SortTableViewCell.swift in Sources */,
 				158C32E829333E42007547AB /* RickandMortyTableViewCell.swift in Sources */,
+				158C32F829336111007547AB /* ReusableTableView.swift in Sources */,
+				158C32F629335FF4007547AB /* FilterViewControllerViewModel.swift in Sources */,
 				158C32DA29333D14007547AB /* RickandmortyViewModel.swift in Sources */,
 				158C32E329333DEB007547AB /* rickonImageView+Extension.swift in Sources */,
 				158C32BD29333A5C007547AB /* RickandmortyViewController.swift in Sources */,
+				158C32FA29336A3B007547AB /* FilterCollectionViewCell.swift in Sources */,
 				158C32DC29333D32007547AB /* DetailViewControllerViewModel.swift in Sources */,
-				158C32EC29333FA6007547AB /* PopUp.swift in Sources */,
 				158C32D629333CCD007547AB /* Service.swift in Sources */,
+				158C32F0293349F2007547AB /* GenderTableViewCell.swift in Sources */,
 				158C32B929333A5C007547AB /* AppDelegate.swift in Sources */,
+				158C32EE29334389007547AB /* ReusableTextfield.swift in Sources */,
 				158C32BB29333A5C007547AB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

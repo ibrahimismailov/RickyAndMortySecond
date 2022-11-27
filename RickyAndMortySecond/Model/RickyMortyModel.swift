@@ -6,93 +6,29 @@
 //
 
 import Foundation
-// MARK: - RickanMortyModel
-struct RickanMortyModel: Codable {
+
+struct RickanMortyModel: Decodable {
     let info: Info?
-    let results: [RickanMortyModelResult]
+    let results: [RickanMortyModelResult]?
 }
-struct Info: Codable {
+
+struct Info: Decodable {
     let count, pages: Int?
-    let next: String?
+    let next, prev: String?
 }
-// MARK: - RickanMortyModelResult
-struct RickanMortyModelResult: Codable {
-    let id: Int?
-    let name: String?
-    let status: Status?
-    let species: Species?
-    let type: String?
-    let gender: Gender?
-    let origin, location: Location?
-    let image: String?
+struct RickanMortyModelResult  : Decodable {
+    let id : Int?
+    let name : String?
+    let status : String?
+    let species : String?
+    let type : String?
+    let gender : String?
+    let image : String?
+    let location : Location
+    let episode : [String]
 }
-enum Gender: String, Codable {
-    case female = "Female"
-    case male = "Male"
-    case unknown = "unknown"
-}
-
-// MARK: - Location
-struct Location: Codable {
-    let name: String?
-    let url: String?
+struct Location : Decodable {
+    let name : String?
+    let url : String?
 }
 
-enum Species: String, Codable {
-    case alien = "Alien"
-    case human = "Human"
-}
-
-enum Status: String, Codable {
-    case alive = "Alive"
-    case dead = "Dead"
-    case unknown = "unknown"
-}
-
-struct CharacterListViewModel {
-    var resultList : [RickanMortyModelResult]
-    
-    
-    func numberOfRowAt ()-> Int {
-        return resultList.count
-    }
-    func cellForRowAt(_ index : Int) -> CharacterViewModel{
-        let character = resultList[index]
-        return CharacterViewModel(character)
-    }
-    mutating func searchNotFound(){
-        self.resultList = []
-    }
-}
-struct CharacterViewModel{
-    
-    let result : RickanMortyModelResult
-    
-    init(_ result : RickanMortyModelResult){
-        self.result = result
-    }
-    
-    var id : Int {
-        return self.result.id ?? 0
-    }
-    var name : String {
-        return self.result.name ?? ""
-    }
-    var status : String{
-        return self.result.status?.rawValue ?? ""
-    }
-    var species : String {
-        return self.result.species?.rawValue ?? ""
-    }
-    var type : String {
-        return self.result.type ?? ""
-    }
-    var gender : String {
-        return self.result.type ?? ""
-    }
-    var image : String {
-        return self.result.image ?? ""
-    }
-
-    
-}

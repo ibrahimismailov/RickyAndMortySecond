@@ -109,9 +109,8 @@ extension DetailViewController: DetailViewControllerInterface {
     func configureViews(with model: RickanMortyModelResult) {
         imageRickan.sd_setImage(with: URL(string: model.image ?? "") )
         labelRickan.text = "My name is \(model.name ?? "Name")"
-        genderRickan.text = "Gender : \(model.gender?.rawValue ?? "")"
-        statusRickan.text = "Status : \(model.status?.rawValue ?? "")"
-        specRickan.text = "Species : \(model.species?.rawValue ?? "")"
-        originRickan.text = "Origin : \(model.origin?.name ?? "")"
+        genderRickan.text = "Gender : \(model.gender ?? "")"
+        statusRickan.text = "Status : \(model.status ?? "")"
+        specRickan.text = "Species : \(model.species ?? "")"
     }
 }

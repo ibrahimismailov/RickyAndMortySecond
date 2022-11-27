@@ -134,22 +134,10 @@ extension RickandmortyViewController: RickanMortyViewInterface {
     }
     
         @objc private func tappedFilter() {
-            view.addSubview(viewModel.popUp)
-            viewModel.popUp.applyButton.addTarget(
-        self,
-        action: #selector(tappedApplyButton),
-        for: .touchUpInside)
+           goToDetail(to: FilterViewController(), animated: true)
         }
     
-    @objc  func tappedApplyButton() {
-       
-        let gender = viewModel.popUp.selectedGender
-        let status = viewModel.popUp.selectedStatus
-        UserDefaults.standard.set(gender, forKey: "gender")
-        UserDefaults.standard.set(status, forKey: "status")
-        viewModel.applyButtonTapped(gender: gender, status: status)
-        
-        }
+ 
     
     func prepareTableView() {
         view.addSubview(RickontableView)
