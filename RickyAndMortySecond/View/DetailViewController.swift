@@ -114,6 +114,4 @@ extension DetailViewController: DetailViewControllerInterface {
         specRickan.text = "Species : \(model.species?.rawValue ?? "")"
         originRickan.text = "Origin : \(model.origin?.name ?? "")"
     }
-    
-    
 }
